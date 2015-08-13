@@ -1,10 +1,14 @@
 import Data.Char (digitToInt)
 
-digit :: Int -> Bool
-digit = (`elem` [1..9])
+boxSize = 3
+size = boxSize ^ 2 
 
-blank :: Int -> Bool
-blank = (== 0)
+choice :: Int -> [Int]
+choice 0 = [1..size]
+choice x = [x]
+
+choices :: [[Int]] -> [[[Int]]]
+choices = map $ map choice
 
 solve :: [[Int]] -> [[Int]]
 solve = id
@@ -14,5 +18,10 @@ convert ' ' = 0
 convert c = digitToInt c
 
 main :: IO ()
-main = getContents >>= putStrLn . unlines . map unwords . map (map show) . 
+main = getContents >>= putStrLn . unlines . map (unlines.map (unwords.map show)) .
+                       choices . map (map convert) . lines
+
+{-
+main = getContents >>= putStrLn . unlines . map (unwords . map show) . 
          solve . map (map convert) . lines
+-}
