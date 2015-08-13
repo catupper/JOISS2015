@@ -1,3 +1,9 @@
+{-
+Note: the source code on the book fails
+      listArray (0,n-1) ===> listArray(0,n)
+      [x | .. ] ==> lrot [x | .. ]
+-}
+
 import Data.Array
 import Data.List(sort,tails)
 
