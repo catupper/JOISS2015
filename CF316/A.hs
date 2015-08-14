@@ -3,7 +3,7 @@ import Control.Monad
 import Data.Array
 -----
 
---be carefull with the type inference
+--be careful with the type inference
 
 -----
 
