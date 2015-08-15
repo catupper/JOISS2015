@@ -35,3 +35,12 @@ getListLn = do n <- readLn
 	       return (map read s)
 --------
 
+
+
+main = do [a, b, c] <- getListSp
+          print $ solve a b c
+
+solve :: Int->Int->Int->Int
+solve a b c | a == b = c
+            | a == c = b
+	    | b == c = a

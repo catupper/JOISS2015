@@ -35,3 +35,23 @@ getListLn = do n <- readLn
 	       return (map read s)
 --------
 
+
+
+main = do n <- readLn :: IO Int
+          a <- getListSp
+          print $ solve a
+
+solve :: [Int] -> Int
+solve xs | (sum xs) `mod` (length xs) == 0 = solve' xs
+         | otherwise = -1
+
+solve' :: [Int] -> Int
+solve' xs = length $ filter (needMove xs) [1 .. n-1] 
+           where n = length xs
+	   
+needMove :: [Int] -> Int -> Bool
+needMove xs n = ((sum ls) * (length rs)) /= ((sum rs) * (length ls))
+                where ls = take n xs
+		      rs = drop n xs
+
+
