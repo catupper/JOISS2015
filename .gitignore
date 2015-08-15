@@ -1,4 +1,4 @@
-# Created by https://www.gitignore.io
+# Created by https://www.gitignore.io/api/windows,haskell,osx,vim,emacs,sublimetext
 
 ### Windows ###
 # Windows image file caches
@@ -30,7 +30,6 @@ cabal-dev
 *.chs.h
 *.dyn_o
 *.dyn_hi
-.virtualenv
 .hpc
 .hsenv
 .cabal-sandbox/
@@ -38,6 +37,7 @@ cabal.sandbox.config
 *.prof
 *.aux
 *.hp
+.stack-work/
 
 
 ### OSX ###
@@ -66,6 +66,68 @@ Icon
 Network Trash Folder
 Temporary Items
 .apdisk
+
+
+### Vim ###
+[._]*.s[a-w][a-z]
+[._]s[a-w][a-z]
+*.un~
+Session.vim
+.netrwhist
+*~
+
+
+### Emacs ###
+# -*- mode: gitignore; -*-
+*~
+\#*\#
+/.emacs.desktop
+/.emacs.desktop.lock
+*.elc
+auto-save-list
+tramp
+.\#*
+
+# Org-mode
+.org-id-locations
+*_archive
+
+# flymake-mode
+*_flymake.*
+
+# eshell files
+/eshell/history
+/eshell/lastdir
+
+# elpa packages
+/elpa/
+
+# reftex files
+*.rel
+
+# AUCTeX auto folder
+/auto/
+
+# cask packages
+.cask/
+
+
+### SublimeText ###
+# cache files for sublime text
+*.tmlanguage.cache
+*.tmPreferences.cache
+*.stTheme.cache
+
+# workspace files are user-specific
+*.sublime-workspace
+
+# project files should be checked into the repository, unless a significant
+# proportion of contributors will probably not be using SublimeText
+# *.sublime-project
+
+# sftp configuration file
+sftp-config.json
+
 
 ### Custom ###
 
