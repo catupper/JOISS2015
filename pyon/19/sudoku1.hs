@@ -88,14 +88,10 @@ solve :: Grid Int -> Choice (Grid Int)
 --solve = filter valid . expand . choices
 solve = search . choices
 
-convert :: Char -> Int
-convert ' ' = 0
-convert c = digitToInt c
-
 main :: IO ()
 main = getContents >>=
          mapM_ (putStrLn . unlines . map (unwords . map show)) . 
-         solve . map (map convert) . lines
+         solve . map (map read . words) . lines
 
 {-
 main = getContents >>= putStrLn . unlines . map (unlines.map (unwords.map show)) .
