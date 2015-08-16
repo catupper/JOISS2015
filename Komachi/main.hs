@@ -14,7 +14,12 @@ valTerm :: Term -> Int
 valTerm = product . map valFact
 
 valFact :: Factor -> Int
-valFact = foldl1 (\n d -> 10 * n + d)
+valFact = foldl1 connect
+--valFact = foldl1 (\n d -> 10 * n + d)
+
+connect :: Int -> Int -> Int
+--connect a b = a * (10 ^ (floor (logBase 10 b) + 1) + b
+connect a b = read $ (show a) ++ (show b)
 
 good :: Int -> Int -> Bool
 good = (==)
