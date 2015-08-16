@@ -85,15 +85,9 @@ search grid | not $ safe grid = []
             where g = prune grid
 
 solve :: Grid Int -> Choice (Grid Int)
---solve = filter valid . expand . choices
 solve = search . choices
 
 main :: IO ()
 main = getContents >>=
          mapM_ (putStrLn . unlines . map (unwords . map show)) . 
          solve . map (map read . words) . lines
-
-{-
-main = getContents >>= putStrLn . unlines . map (unlines.map (unwords.map show)) .
-                       choices . map (map convert) . lines
--}
