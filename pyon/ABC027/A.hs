@@ -1,0 +1,1 @@
+main = getLine >>= return.words >>= \ls -> putStrLn $ head $ filter (odd.length . flip filter ls . (==)) ls
